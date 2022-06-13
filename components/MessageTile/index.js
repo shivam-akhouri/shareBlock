@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 export default function MessageTile(props){
     return (
             <View style={[styles.container, {alignSelf:props.type == 'sender'? 'flex-end' : 'flex-start'}]}>
