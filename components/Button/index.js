@@ -1,6 +1,6 @@
-import { FontAwesome5 } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 export default function Button(props) {
   return (

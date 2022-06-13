@@ -1,22 +1,9 @@
-import { LinearGradient } from 'expo-linear-gradient';
+import React from 'react';
+import LinearGradient from 'react-native-linear-gradient';
 import { ImageBackground, StyleSheet, Text, View, StatusBar } from 'react-native';
 import Button from '../../components/Button';
-import { useFonts, Mitr_400Regular, Mitr_700Bold, Mitr_600SemiBold, Mitr_200ExtraLight, Mitr_300Light, Mitr_500Medium } from '@expo-google-fonts/mitr';
-import AppLoading from 'expo-app-loading';
 
 export default function Welcome(props) {
-    let [fontsLoaded] = useFonts({
-        Mitr_200ExtraLight,
-        Mitr_300Light,
-        Mitr_400Regular,
-        Mitr_500Medium,
-        Mitr_600SemiBold,
-        Mitr_700Bold
-    })
-    if (!fontsLoaded) {
-        return <AppLoading />
-    } else {
-
         return (
             <View style={styles.container}>
                 <ImageBackground
@@ -42,7 +29,6 @@ export default function Welcome(props) {
                 <StatusBar />
             </View>
         );
-    }
 }
 
 const styles = StyleSheet.create({
@@ -64,12 +50,12 @@ const styles = StyleSheet.create({
         color: "white",
         marginLeft: "5%",
         fontSize: 25,
-        fontFamily: 'Mitr_400Regular'
+        fontFamily: 'mitr_regular'
     },
     text2: {
         color: "white",
         marginLeft: "5%",
         fontSize: 50,
-        fontFamily: 'Mitr_700Bold'
+        fontFamily: 'mitr_bold'
     }
 });
