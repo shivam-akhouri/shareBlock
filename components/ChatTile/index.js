@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather'
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Octicons from 'react-native-vector-icons/Octicons';
@@ -81,11 +80,11 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
     title: {
-        fontFamily: "Mitr_400Regular",
+        fontFamily: "mitr_regular",
         fontSize: 16
     },
     lastmsg: {
-        fontFamily: "Mitr_200ExtraLight",
+        fontFamily: "mitr_extralight",
         color: "#aeaeae"
     },
     center:{
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
     },
     heading:{
         alignSelf: "center",
-        fontFamily: "Mitr_400Regular",
+        fontFamily: "mitr_regular",
         fontSize: 17,
         color: "#3d3d3d",
         width: "100%",
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
         width: "100%",
         textAlign:"center",
         paddingVertical: 15,
-        fontFamily: "Mitr_300Light",
+        fontFamily: "mitr_light",
         fontSize: 15,
         alignItems: "center",
         justifyContent: "center"

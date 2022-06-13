@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         paddingBottom: 4,
     },
     headingText:{
-        fontFamily: "Mitr_300Light",
+        fontFamily: "mitr_light",
         fontSize: 30,
         letterSpacing: 5
     }
