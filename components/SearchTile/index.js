@@ -1,6 +1,6 @@
-import { Feather, FontAwesome5, Ionicons, MaterialCommunityIcons, Octicons } from '@expo/vector-icons';
-import { View, Image, StyleSheet, Text, TouchableOpacity, Modal, Pressable, Alert } from 'react-native';
-import {useState} from 'react';
+import React,{useState} from 'react';
+import Feather from 'react-native-vector-icons/Feather';
+import { View, Image, StyleSheet, Text, TouchableOpacity, Touchable } from 'react-native';
 
 export default function SearchTile(props) {
     const [modalVisible, setModalVisible] = useState(false);
@@ -13,8 +13,10 @@ export default function SearchTile(props) {
                 <Text style={styles.lastmsg}>Active 30m ago</Text>
             </View>
             <View style={{ justifyContent: "center", alignItems: "center", flexDirection: "row" }}>
-                <TouchableOpacity style={{ borderWidth: 0.3, borderColor: "black", flexDirection: "row", alignItems: "center", padding: 8, backgroundColor: "#d6fcd2", borderRadius: 5 }}>
-                    <Text style={{fontFamily: "Mitr_300Light", fontSize: 10}}>Catch Up!  </Text>
+                <TouchableOpacity onPress={()=>console.log("hello")} 
+                style={{ borderWidth: 0.3, borderColor: "black", flexDirection: "row", alignItems: "center", padding: 8, 
+                            backgroundColor: "#d6fcd2", borderRadius: 5 }}>
+                    <Text style={{fontFamily: "mitr_light", fontSize: 10}}>Catch Up!  </Text>
                     <Feather name="send" size={10} color="#5e5e5e" />
                 </TouchableOpacity>
             </View>
@@ -43,11 +45,11 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
     title: {
-        fontFamily: "Mitr_400Regular",
+        fontFamily: "mitr_regular",
         fontSize: 16
     },
     lastmsg: {
-        fontFamily: "Mitr_200ExtraLight",
+        fontFamily: "mitr_extralight",
         color: "#aeaeae"
     },
     center:{
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     },
     heading:{
         alignSelf: "center",
-        fontFamily: "Mitr_400Regular",
+        fontFamily: "mitr_regular",
         fontSize: 17,
         color: "#3d3d3d",
         width: "100%",
@@ -75,7 +77,7 @@ const styles = StyleSheet.create({
         width: "100%",
         textAlign:"center",
         paddingVertical: 15,
-        fontFamily: "Mitr_300Light",
+        fontFamily: "mitr_light",
         fontSize: 15,
         alignItems: "center",
         justifyContent: "center"

@@ -1,9 +1,8 @@
-import { FontAwesome5 } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Touchable, TouchableOpacity, View, TextInput, FlatList } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, TextInput, FlatList } from 'react-native';
 import BottomMenu from '../../components/BottomMenu';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
+import LinearGradient from 'react-native-linear-gradient';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import SearchTile from '../../components/SearchTile';
 
 const DATA = [1,2,3,34,5,6,,35,35,34,3,43,3,43,6];

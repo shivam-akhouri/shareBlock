@@ -42,6 +42,7 @@ import ChatList from './pages/ChatList';
 import Feed from './pages/Feeds';
 import Profile from './pages/Profile';
 import ChatPage from './pages/ChatPage';
+import Search from './pages/Search';
 const FILTERS = [
   {
     title: 'Normal',
@@ -181,7 +182,7 @@ const App = () => {
   const SelectedFilterComponent = FILTERS[selectedFilterIndex].filterComponent;
   return (
     <>
-      <ChatPage />
+      <Search />
     </>
   );
 };
