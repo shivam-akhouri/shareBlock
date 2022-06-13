@@ -1,9 +1,7 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import Button from '../../components/Button';
+import { StyleSheet, Text, View } from 'react-native';
 import CustomButton from '../../components/CustomButton';
 import TextInput from '../../components/TextInput';
-import { createUser } from '../../utils/messaging';
 
 export default function SignUp() {
     const [profile, setProfile] = React.useState({
@@ -47,7 +45,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
     },
     text: {
-        fontFamily: 'Mitr_400Regular',
+        fontFamily: 'mitr_regular',
         fontSize: 40,
         marginTop: "5%",
         marginBottom: "15%"

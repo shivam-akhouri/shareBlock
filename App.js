@@ -44,6 +44,7 @@ import Profile from './pages/Profile';
 import ChatPage from './pages/ChatPage';
 import Search from './pages/Search';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 const FILTERS = [
   {
     title: 'Normal',
@@ -183,7 +184,7 @@ const App = () => {
   const SelectedFilterComponent = FILTERS[selectedFilterIndex].filterComponent;
   return (
     <>
-      <SignIn />
+      <SignUp />
     </>
   );
 };
