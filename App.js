@@ -40,6 +40,7 @@ import {
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import ChatList from './pages/ChatList';
 import Feed from './pages/Feeds';
+import Profile from './pages/Profile';
 const FILTERS = [
   {
     title: 'Normal',
@@ -179,7 +180,7 @@ const App = () => {
   const SelectedFilterComponent = FILTERS[selectedFilterIndex].filterComponent;
   return (
     <>
-      <ChatList />
+      <Profile />
     </>
   );
 };

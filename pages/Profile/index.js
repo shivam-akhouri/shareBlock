@@ -1,36 +1,12 @@
+import React from 'react';
 import { StatusBar, StyleSheet, Text, View, Image } from 'react-native';
-import { useFonts, Mitr_400Regular, Mitr_700Bold, Mitr_600SemiBold, Mitr_200ExtraLight, Mitr_300Light } from '@expo-google-fonts/mitr';
-import AppLoading from 'expo-app-loading';
-import { FontAwesome, Fontisto, MaterialCommunityIcons } from '@expo/vector-icons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import BottomMenu from '../../components/BottomMenu';
-import { LinearGradient } from 'expo-linear-gradient';
-import { getDatabase, ref, onValue, set } from 'firebase/database';
-import { database } from '../../utils/databse';
-import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { sendMessage } from '../../utils/messaging';
-import { RSAEncrypt } from '../../utils/encryption';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function Profile(props) {
-    let [fontsLoaded] = useFonts({
-        Mitr_400Regular,
-        Mitr_600SemiBold,
-        Mitr_700Bold,
-        Mitr_200ExtraLight,
-        Mitr_300Light
-    })
-    function storeHighScore(userId, score) {
-      // const db = getDatabase(database, "https://shareblock-2ea17-default-rtdb.asia-southeast1.firebasedatabase.app/");
-      // const reference = ref(db, 'users/' + userId);
-      // set(reference, {
-      //   highscore: score,
-      // });
-      sendMessage("shivam", "suraj", RSAEncrypt("Kaise Ho?"));
-    }
-    storeHighScore("shivam", 100);
-    if (!fontsLoaded) {
-        return <AppLoading />
-    } else {
-
   return (
     <LinearGradient colors={["transparent", 'transparent']} style={styles.container}>
         <View style={{flexDirection: "row", width: "90%", marginTop: 20}}>
@@ -76,7 +52,6 @@ export default function Profile(props) {
     </LinearGradient>
   );
 }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -90,15 +65,15 @@ const styles = StyleSheet.create({
       height: 100,
   },
   name:{
-      fontFamily: 'Mitr_400Regular',
+      fontFamily: 'mitr_regular',
       fontSize: 35,
   }, 
   intro:{
-    fontFamily: 'Mitr_200ExtraLight',
+    fontFamily: 'mitr_extralight',
       fontSize: 15,
   },
   heading:{
-    fontFamily: 'Mitr_300Light',
+    fontFamily: 'mitr_light',
     marginTop: 20,
     fontSize: 20,
     alignSelf: 'flex-start',
@@ -107,7 +82,7 @@ const styles = StyleSheet.create({
     marginBottom: 15
   },
   innerheading:{
-    fontFamily: 'Mitr_600SemiBold',
+    fontFamily: 'mitr_semibold',
     letterSpacing: 1,
     fontSize: 13,
     marginBottom: 10
