@@ -1,5 +1,7 @@
 
-import React, {useRef, useState} from 'react';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   FlatList,
   Image,
@@ -8,35 +10,6 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import {
-  AdenCompat,
-  _1977Compat,
-  BrannanCompat,
-  BrooklynCompat,
-  ClarendonCompat,
-  EarlybirdCompat,
-  GinghamCompat,
-  HudsonCompat,
-  InkwellCompat,
-  KelvinCompat,
-  LarkCompat,
-  LofiCompat,
-  MavenCompat,
-  MayfairCompat,
-  MoonCompat,
-  NashvilleCompat,
-  PerpetuaCompat,
-  ReyesCompat,
-  RiseCompat,
-  SlumberCompat,
-  StinsonCompat,
-  ToasterCompat,
-  ValenciaCompat,
-  WaldenCompat,
-  WillowCompat,
-  Xpro2Compat,
-} from 'react-native-image-filter-kit'; 
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import ChatList from './pages/ChatList';
 import Feed from './pages/Feeds';
@@ -46,147 +19,25 @@ import Search from './pages/Search';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Welcome from './pages/Welcome';
-const FILTERS = [
-  {
-    title: 'Normal',
-    filterComponent: AdenCompat,
-  },
-  {
-    title: 'Maven',
-    filterComponent: MavenCompat,
-  },
-  {
-    title: 'Mayfair',
-    filterComponent: MayfairCompat,
-  },
-  {
-    title: 'Moon',
-    filterComponent: MoonCompat,
-  },
-  {
-    title: 'Nashville',
-    filterComponent: NashvilleCompat,
-  },
-  {
-    title: 'Perpetua',
-    filterComponent: PerpetuaCompat,
-  },
-  {
-    title: 'Reyes',
-    filterComponent: ReyesCompat,
-  },
-  {
-    title: 'Rise',
-    filterComponent: RiseCompat,
-  },
-  {
-    title: 'Slumber',
-    filterComponent: SlumberCompat,
-  },
-  {
-    title: 'Stinson',
-    filterComponent: StinsonCompat,
-  },
-  {
-    title: 'Brooklyn',
-    filterComponent: BrooklynCompat,
-  },
-  {
-    title: 'Earlybird',
-    filterComponent: EarlybirdCompat,
-  },
-  {
-    title: 'Clarendon',
-    filterComponent: ClarendonCompat,
-  },
-  {
-    title: 'Gingham',
-    filterComponent: GinghamCompat,
-  },
-  {
-    title: 'Hudson',
-    filterComponent: HudsonCompat,
-  },
-  {
-    title: 'Inkwell',
-    filterComponent: InkwellCompat,
-  },
-  {
-    title: 'Kelvin',
-    filterComponent: KelvinCompat,
-  },
-  {
-    title: 'Lark',
-    filterComponent: LarkCompat,
-  },
-  {
-    title: 'Lofi',
-    filterComponent: LofiCompat,
-  },
-  {
-    title: 'Toaster',
-    filterComponent: ToasterCompat,
-  },
-  {
-    title: 'Valencia',
-    filterComponent: ValenciaCompat,
-  },
-  {
-    title: 'Walden',
-    filterComponent: WaldenCompat,
-  },
-  {
-    title: 'Willow',
-    filterComponent: WillowCompat,
-  },
-  {
-    title: 'Xpro2',
-    filterComponent: Xpro2Compat,
-  },
-  {
-    title: 'Aden',
-    filterComponent: AdenCompat,
-  },
-  {
-    title: '_1977',
-    filterComponent: _1977Compat,
-  },
-  {
-    title: 'Brannan',
-    filterComponent: BrannanCompat,
-  },
-];
+import AddPost from './pages/AddPost';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const extractedUri = useRef('https://www.hyundai.com/content/hyundai/ww/data/news/data/2021/0000016609/image/newsroom-0112-photo-1-2021elantranline-1120x745.jpg');
-  const [selectedFilterIndex, setIndex] = useState(0);
-  const onExtractImage = ({nativeEvent}) => {
-    extractedUri.current = nativeEvent.uri;
-  };
-  const onSelectFilter = selectedIndex => {
-    setIndex(selectedIndex);
-  };
-  const renderFilterComponent = ({item, index}) => {
-    const FilterComponent = item.filterComponent;
-    const image = (
-      <Image
-        style={styles.filterSelector}
-        source={require("./assets/car.png")}
-        resizeMode={'contain'}
-      />
-    );
-    return (
-      <TouchableOpacity onPress={() => onSelectFilter(index)}>
-        <Text style={styles.filterTitle}>{item.title}</Text>
-        <FilterComponent image={image} />
-      </TouchableOpacity>
-    );
-  };
-  const SelectedFilterComponent = FILTERS[selectedFilterIndex].filterComponent;
   return (
-    <>
-      <Search />
-    </>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='chatlist' screenOptions={{headerShown:false}}>
+        <Stack.Screen name="welcome" component={Welcome}/>
+        <Stack.Screen name="addpost" component={AddPost}/>
+        <Stack.Screen name="signup" component={SignUp}/>
+        <Stack.Screen name="signin" component={SignIn}/>
+        <Stack.Screen name="profile" component={Profile}/>
+        <Stack.Screen name="chatlist" component={ChatList}/>
+        <Stack.Screen name="search" component={Search}/>
+        <Stack.Screen name="feed" component={Feed}/> 
+        <Stack.Screen name="chatpage" component={ChatPage}/> 
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 const styles = StyleSheet.create({

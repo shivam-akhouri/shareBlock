@@ -161,7 +161,7 @@ const AddPost = () => {
     const image = (
       <Image
         style={styles.filterSelector}
-        source={require("./assets/car.png")}
+        source={require("../../assets/car.png")}
         resizeMode={'contain'}
       />
     );
@@ -179,7 +179,7 @@ const AddPost = () => {
       {selectedFilterIndex === 0 ? (
         <Image
           style={styles.image}
-          source={require('./assets/car.png')}
+          source={require('../../assets/car.png')}
           resizeMode={'contain'}
         />
       ) : (
@@ -189,7 +189,7 @@ const AddPost = () => {
           image={
             <Image
               style={styles.image}
-              source={require('./assets/car.png')}
+              source={require('../../assets/car.png')}
               resizeMode={'contain'}
             />
           }
