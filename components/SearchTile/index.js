@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
-import { View, Image, StyleSheet, Text, TouchableOpacity, Touchable } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 export default function SearchTile(props) {
     const [modalVisible, setModalVisible] = useState(false);

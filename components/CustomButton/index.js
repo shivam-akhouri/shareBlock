@@ -1,5 +1,6 @@
-import { FontAwesome5 } from '@expo/vector-icons';
-import { StyleSheet, Text, Touchable, TouchableOpacity, ImageBackground} from 'react-native';
+import React from 'react';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-native';
 
 export default function CustomButton(props) {
   return (

@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import CustomButton from '../../components/CustomButton';
 import TextInput from '../../components/TextInput';
-import { findDoc } from '../../utils/messaging';
 
 export default function SignIn(props) {
   const [details, setDetials] = React.useState({
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   text:{
-    fontFamily: 'Mitr_400Regular',
+    fontFamily: 'mitr_regular',
     fontSize: 40,
     
     marginBottom: "35%"
