@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react';
+import ImagePicker from 'react-native-image-crop-picker';
 import {
   FlatList,
   Image,
@@ -6,6 +7,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 import {
   AdenCompat,
@@ -160,7 +162,7 @@ const AddPost = () => {
     const image = (
       <Image
         style={styles.filterSelector}
-        source={require("../../assets/car.png")}
+        source={{uri: pickedImage}}
         resizeMode={'contain'}
       />
     );
@@ -171,14 +173,35 @@ const AddPost = () => {
       </TouchableOpacity>
     );
   };
+
+
+
+
+
+
+  const [pickedImage, setPickedImage] = useState('../../assets/car.png');
+  const pickImage = ()=> {ImagePicker.openPicker({
+    width: 300,
+    height: 400,
+    cropping: true,
+    includeBase64: true,  
+  }).then(image => {
+    const source = { uri: `data:${image.mime};base64,${image.data}` };
+    console.log(image);
+    setPickedImage(image.path);
+    console.log(image.path);
+  });}
+
   const SelectedFilterComponent = FILTERS[selectedFilterIndex].filterComponent;
   return (
     <>
+    <Button title="Pick Image" onPress = {()=> pickImage()}></Button>
+    {/* <Image source = {{uri: pickedImage}} style = {{width: 200, height: 300}} /> */}
       <SafeAreaView />
       {selectedFilterIndex === 0 ? (
         <Image
           style={styles.image}
-          source={require('../../assets/car.png')}
+          source={{uri: pickedImage}}
           resizeMode={'contain'}
         />
       ) : (
@@ -188,7 +211,7 @@ const AddPost = () => {
           image={
             <Image
               style={styles.image}
-              source={require('../../assets/car.png')}
+              source={{uri: pickedImage}}
               resizeMode={'contain'}
             />
           }

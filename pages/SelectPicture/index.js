@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 function SelectPicture() {
-  const [pickedImage, setPickedImage] = useState('');
+  const [pickedImage, setPickedImage] = useState('../../assets/car.png');
   const pickImage = ()=> {ImagePicker.openPicker({
     width: 300,
     height: 400,
@@ -26,7 +26,7 @@ function SelectPicture() {
   return (
     <>
     <Button title="Pick Image" onPress = {()=> pickImage()}></Button>
-    <Image source = {pickedImage} />
+    <Image source = {{uri: pickedImage}} style = {{width: 200, height: 300}} />
     </>
   )
 }

@@ -13,7 +13,7 @@ export default function BottomMenu(props) {
         <Text style={styles.text}>Feed</Text>
       </TouchableOpacity>
       <View style={{width: 0.4, height: "75%", backgroundColor: "black"}}/>
-      <TouchableOpacity style={{alignItems: "center"}} onPress={()=>props.navigation.navigate("selectpicture")}>
+      <TouchableOpacity style={{alignItems: "center"}} onPress={()=>props.navigation.navigate("addpost")}>
         <MaterialCommunityIcons name="account-search" size={28} color="black" />
         <Text style={styles.text}>search</Text>
       </TouchableOpacity>
