@@ -20,6 +20,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Welcome from './pages/Welcome';
 import AddPost from './pages/AddPost';
+import SelectPicture from './pages/SelectPicture';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ const App = () => {
       <Stack.Navigator initialRouteName='chatlist' screenOptions={{headerShown:false}}>
         <Stack.Screen name="welcome" component={Welcome}/>
         <Stack.Screen name="addpost" component={AddPost}/>
+        <Stack.Screen name="selectpicture" component={SelectPicture}/>
         <Stack.Screen name="signup" component={SignUp}/>
         <Stack.Screen name="signin" component={SignIn}/>
         <Stack.Screen name="profile" component={Profile}/>
